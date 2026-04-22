@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="stylesheet" href="nerox.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Studio | Premium Digital Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Spotlight Effect */
+        #cursor-glow {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            transition: width 0.3s, height 0.3s;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border 0.3s ease;
+        }
+
+        .glass:hover {
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+        }
+
+        /* Floating Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100px, 50px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spotlight -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 transition-all duration-300 glass border-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter">NEXORA<span class="text-violet-500">.</span></div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-400">
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                <a href="#process" class="hover:text-white transition">Process</a>
+            </div>
+            <a href="https://wa.me/YOUR_NUMBER"
+                class="magnetic-btn px-6 py-2 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition">Start
+                Project</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="orb w-96 h-96 bg-violet-600 top-20 -left-20"></div>
+        <div class="orb w-80 h-80 bg-blue-600 bottom-20 -right-20"></div>
+
+        <div class="max-w-5xl text-center z-10">
+            <h1 class="text-5xl md:text-8xl font-extrabold leading-tight mb-8 reveal">
+                We build websites that feel <span class="text-gradient">premium</span> — and convert like crazy.
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 reveal" style="transition-delay: 0.2s;">
+                Nexora Studio blends high-end aesthetics with conversion psychology to scale your brand globally.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center reveal"
+                style="transition-delay: 0.4s;">
+                <a href="https://wa.me/YOUR_NUMBER"
+                    class="magnetic-btn px-10 py-4 bg-gradient-custom rounded-full font-bold text-lg shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 transition-all">
+                    Get Free Demo
+                </a>
+                <span class="text-gray-500 text-sm italic">Limited spots for Q2 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16 reveal">
+            <h2 class="text-4xl font-bold mb-4">Our Expertise</h2>
+            <p class="text-gray-400">Tailored solutions for the next generation of businesses.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <div class="glass p-8 rounded-3xl" data-tilt data-tilt-max="10">
+                <i data-lucide="monitor" class="text-violet-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">Website Design</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">High-end layouts that capture attention and build
+                    immediate brand authority.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass p-8 rounded-3xl" data-tilt data-tilt-max="10">
+                <i data-lucide="layers" class="text-blue-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">UI/UX Strategy</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">User-centric interfaces designed to reduce friction and
+                    maximize delight.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass p-8 rounded-3xl" data-tilt data-tilt-max="10">
+                <i data-lucide="trending-up" class="text-purple-500 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">Conversion Opt.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Turning visitors into high-ticket clients with
+                    data-backed landing pages.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="glass p-8 rounded-3xl" data-tilt data-tilt-max="10">
+                <i data-lucide="search" class="text-blue-400 mb-6 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mb-3">Premium SEO</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Be found by the right audience. Visibility built for
+                    luxury market standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="py-24 px-6 bg-zinc-950/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-violet-500 font-bold tracking-widest text-xs uppercase">Featured Case Study</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">Luxe Stay Resorts</h2>
+                    <p class="text-gray-400 mb-8 text-lg">We redesigned a global hospitality brand’s booking engine,
+                        focusing on "Visual Scarcity" and "Frictionless Flow".</p>
+
+                    <div class="grid grid-cols-3 gap-4 mb-10">
+                        <div>
+                            <div class="text-3xl font-bold text-white">210%</div>
+                            <div class="text-gray-500 text-xs">Bookings Increase</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">0.8s</div>
+                            <div class="text-gray-500 text-xs">Load Speed</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">12k+</div>
+                            <div class="text-gray-500 text-xs">New Leads</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal rounded-3xl overflow-hidden glass p-4">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
+                        alt="Case Study" class="rounded-2xl hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 px-6 max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-16 reveal">The Nexora Method</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="reveal">
+                <div
+                    class="w-12 h-12 rounded-full bg-violet-600/20 flex items-center justify-center mx-auto mb-6 text-violet-400 font-bold italic">
+                    01</div>
+                <h4 class="font-bold mb-2">Strategy</h4>
+                <p class="text-gray-500 text-sm">Deep dive into your goals & brand voice.</p>
+            </div>
+            <div class="reveal" style="transition-delay: 0.1s;">
+                <div
+                    class="w-12 h-12 rounded-full bg-violet-600/20 flex items-center justify-center mx-auto mb-6 text-violet-400 font-bold italic">
+                    02</div>
+                <h4 class="font-bold mb-2">Design</h4>
+                <p class="text-gray-500 text-sm">Crafting a unique premium visual identity.</p>
+            </div>
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <div
+                    class="w-12 h-12 rounded-full bg-violet-600/20 flex items-center justify-center mx-auto mb-6 text-violet-400 font-bold italic">
+                    03</div>
+                <h4 class="font-bold mb-2">Build</h4>
+                <p class="text-gray-500 text-sm">High-performance development.</p>
+            </div>
+            <div class="reveal" style="transition-delay: 0.3s;">
+                <div
+                    class="w-12 h-12 rounded-full bg-violet-600/20 flex items-center justify-center mx-auto mb-6 text-violet-400 font-bold italic">
+                    04</div>
+                <h4 class="font-bold mb-2">Launch</h4>
+                <p class="text-gray-500 text-sm">Optimization and global deployment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto glass p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">
+            <div class="orb w-64 h-64 bg-blue-500/20 -top-20 -left-20"></div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 reveal">Ready to upgrade your brand?</h2>
+            <p class="text-gray-400 mb-10 text-lg reveal">Stop settling for "just a website". Let's build an asset.</p>
+            
+            <form id="leadForm" class="space-y-4 max-w-2xl mx-auto reveal z-10 relative">
+                <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition">
+                <input type="email" id="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition">
+                <input type="text" id="projectType" placeholder="Project Type (e.g. Website)" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition">
+                <input type="text" id="budget" placeholder="Budget ($)" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition">
+                <textarea id="message" placeholder="Project Details" required rows="4" class="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition"></textarea>
+                
+                <button type="submit" class="w-full magnetic-btn py-4 bg-gradient-custom rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-violet-500/30 transition-all border-none text-white cursor-pointer">
+                    Send Inquiry
+                </button>
+            </form>
+            <p id="formStatus" class="mt-4 text-center hidden z-10 relative"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 text-center">
+        <div class="text-xl font-bold mb-4 tracking-tighter">NEXORA STUDIO</div>
+        <p class="text-gray-500 text-sm">© 2024 Nexora Studio. Elevating digital standards.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Spotlight Cursor Movement
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Magnetic Button Effect
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Vanilla Tilt Init
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '12px 24px';
+                nav.style.background = 'rgba(10, 10, 10, 0.8)';
+            } else {
+                nav.style.padding = '24px 24px';
+                nav.style.background = 'transparent';
+            }
+        });
+
+        // Connect HTML Form to Backend Server (nerox.js)
+        const leadForm = document.getElementById('leadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const statusMsg = document.getElementById('formStatus');
+                statusMsg.classList.remove('hidden');
+                statusMsg.textContent = "Sending...";
+                statusMsg.className = "mt-4 text-center text-gray-400 z-10 relative";
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    projectType: document.getElementById('projectType').value,
+                    budget: document.getElementById('budget').value,
+                    message: document.getElementById('message').value
+                };
+
+                try {
+                    // Send data to the Node.js backend
+                    const response = await fetch('http://localhost:5000/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        statusMsg.textContent = "✅ Inquiry sent successfully! We'll be in touch.";
+                        statusMsg.className = "mt-4 text-center text-green-400 font-bold z-10 relative";
+                        leadForm.reset();
+                    } else {
+                        throw new Error(data.error);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    statusMsg.textContent = "❌ Failed to connect to server. Is your nerox.js backend running?";
+                    statusMsg.className = "mt-4 text-center text-red-400 font-bold z-10 relative";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
